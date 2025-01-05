@@ -106,7 +106,7 @@ def run_concurrently():
             with lock:
                 results.update(res)
 
-    with ThreadPoolExecutor(max_workers=args.t) as executor:
+    with ThreadPoolExecutor(max_workers=int(args.t)) as executor:
         for i, host in enumerate(hosts):
             executor.submit(check_host, host)
 
