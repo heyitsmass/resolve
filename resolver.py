@@ -110,9 +110,6 @@ def run_concurrently():
         for i, host in enumerate(hosts):
             executor.submit(check_host, host)
 
-            if i == 10:
-                break
-
     save_results(results)
 
 
